@@ -22,7 +22,6 @@ class DoctorController extends Controller
         return $input;
     }
     public function loginPost(Request $request){
-
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
