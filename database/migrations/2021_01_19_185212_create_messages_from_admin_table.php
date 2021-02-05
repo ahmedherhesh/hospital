@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateMessagesFromAdminTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('messages_from_admin', function (Blueprint $table) {
+            $table->id();
+            $table->string('sender_id');
+            $table->string('doctor_id');
+            $table->string('title')->nullable();
+            $table->string('content')->nullable();
+            $table->string('message_id')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('messages_from_admin');
+    }
+}
