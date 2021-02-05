@@ -22,7 +22,7 @@ class DoctorController extends Controller
         return $input;
     }
     public function loginPost(Request $request){
-        echo $_SERVER['REMOTE_ADDR'];die();
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
